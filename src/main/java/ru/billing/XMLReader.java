@@ -58,7 +58,7 @@ public class XMLReader {
         this.firstXmlFile   =   vfirstXmlFile;
         this.secondXmlFile  =   vsecondXmlFile;
         readFiles();
-
+        getFirstCommandsByRequestGUID ("DA20F5C991D345289C84751488EDF6D6");
         /*diffMaps();
         diffPrint();*/
     }
@@ -185,7 +185,7 @@ public class XMLReader {
                 cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
                 cmds.put(cmdGUID,firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
 
-                System.out.println(cmdGUID);
+                System.out.println("Command GUID: " + " " +cmdHARC_HARC_ID + " " + cmdGUID);
             }
             }
             return cmds;
