@@ -5,15 +5,16 @@ C:\my\IdeaProjects\differ\src\main\java\ru\billing\readers\HexArcRelation.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\readers\HexPredicates.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\hextypes\HexCommandGraphRecord.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\readers\HexCommands.java
+C:\my\IdeaProjects\differ\src\main\java\ru\billing\XMLReader.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\hextypes\HexCommanHistoryRecord.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\differs\DiffPredicates.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\Differ.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\differs\DiffCommandAlgs.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\differs\DiffCommands.java
+C:\my\IdeaProjects\differ\src\main\java\ru\billing\Comparer.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\diffhelpers\GeneralHelpers.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\hextypes\HexCommandRecord.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\readers\HexCommandGraph.java
-C:\my\IdeaProjects\differ\src\main\java\ru\billing\Worker.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\hextypes\HexArcRecord.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\differs\DiffRequests.java
 C:\my\IdeaProjects\differ\src\main\java\ru\billing\readers\HexArcRequest.java

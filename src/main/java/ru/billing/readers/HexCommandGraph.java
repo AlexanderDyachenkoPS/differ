@@ -12,6 +12,7 @@ import java.util.Set;
 
 public class HexCommandGraph {
     private static String cmdPa;
+    private static String cmdHARC;
     private static String cmdPaGUID;
     private static HexRequests     vHexRequests;
     private static HexPredicates   vHexPredicates;
@@ -197,6 +198,24 @@ public class HexCommandGraph {
 
                 }
             }
+        }
+    }
+
+    public  String getCmdRootHarcByHARC_HARC_ID (
+            String startVertex) {
+        internalGetCmdRootHarcByHARC_HARC_ID(startVertex);
+        return cmdHARC;
+    }
+
+    private  void internalGetCmdRootHarcByHARC_HARC_ID (
+                                   String startVertex) {
+
+        Set<DefaultEdge> edges = this.fullHexCommandGraph.getcmdAlgorithm().incomingEdgesOf(startVertex);
+        for (DefaultEdge edge : edges) {
+            String v1 = this.fullHexCommandGraph.getcmdAlgorithm().getEdgeSource(edge);
+            if (!v1.equals("ROOT")) {
+                internalGetCmdRootHarcByHARC_HARC_ID(v1);
+            } else {cmdHARC = startVertex;}
         }
     }
 
