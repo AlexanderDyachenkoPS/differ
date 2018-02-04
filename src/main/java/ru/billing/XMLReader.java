@@ -49,6 +49,10 @@ public class XMLReader {
 
     HexRequestArguments firstHexRequestArguments;
     HexRequestArguments secondHexRequestArguments;
+
+
+    HexCollectionHeader firstHexCollectionHeader;
+    HexCollectionHeader secondHexCollectionHeader;
 ///// MAPS END
 
 /*///// DIFFS BEGIN
@@ -74,6 +78,9 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
         getFirstCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
         getSecondCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
+
+        System.out.println(getFirstHexCollectionHeader().getCOLLECTION_NAME());
+        System.out.println(getSecondHexCollectionHeader().getCOLLECTION_NAME());
         /*diffMaps();
         diffPrint();*/
     }
@@ -118,6 +125,9 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         this.firstHexRequestArguments = new HexRequestArguments(firstXmlFile);
         this.secondHexRequestArguments = new HexRequestArguments(secondXmlFile);
+
+        this.firstHexCollectionHeader = new HexCollectionHeader(firstXmlFile);
+        this.secondHexCollectionHeader = new HexCollectionHeader(secondXmlFile);
 
     }
 
@@ -194,6 +204,14 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
 
     public HexCommands getSecondHexCommands() {
         return secondHexCommands;
+    }
+
+    public HexCollectionHeader getFirstHexCollectionHeader() {
+        return firstHexCollectionHeader;
+    }
+
+    public HexCollectionHeader getSecondHexCollectionHeader() {
+        return secondHexCollectionHeader;
     }
 
     public String getFirstCommandByHARC_HARC_ID(String iHARC_HARC_ID) {

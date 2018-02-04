@@ -3,6 +3,7 @@ ru\billing\readers\HexCommandHistories.class
 ru\billing\hextypes\HexCommandGraphRecord.class
 ru\billing\Comparer.class
 ru\billing\readers\HexArguments.class
+ru\billing\readers\HexCollectionHeader.class
 ru\billing\differs\DiffCommands.class
 ru\billing\hextypes\HexArcRecord.class
 ru\billing\readers\HexPredicates.class
