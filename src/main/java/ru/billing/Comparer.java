@@ -1,10 +1,7 @@
 package ru.billing;
 
 
-import ru.billing.differs.DiffCommandAlgs;
-import ru.billing.differs.DiffCommands;
-import ru.billing.differs.DiffPredicates;
-import ru.billing.differs.DiffRequests;
+import ru.billing.differs.*;
 import ru.billing.diffhelpers.DiffPrinter;
 
 public class Comparer {
@@ -12,6 +9,9 @@ public class Comparer {
     XMLReader xmlreader;
 
 ///// DIFFS BEGIN
+    Headr hdr;
+
+
     DiffRequests        dReq;
     DiffPredicates      dPrd;
     DiffCommands        dCom;
@@ -28,6 +28,10 @@ public class Comparer {
 
 
     private void diffMaps () {
+
+        hdr = new Headr (xmlreader.getFirstHexCollectionHeader(),
+                         xmlreader.getSecondHexCollectionHeader()
+        );
 
         dReq = new DiffRequests();
         dReq.findDiffRequests(
@@ -59,9 +63,10 @@ public class Comparer {
     private void diffPrint () {
 
         DiffPrinter dPrint = new DiffPrinter ();
+        dPrint.printHeaders(hdr);
         dPrint.printReqestsDiff(dReq);
         dPrint.printPredicatesDiff(dPrd);
-        dPrint.printCommandsDiff(dCom);
-        dPrint.printCommandAlgorothmsDiff(dAlg);
+    //    dPrint.printCommandsDiff(dCom);
+    //    dPrint.printCommandAlgorothmsDiff(dAlg);
     }
 }

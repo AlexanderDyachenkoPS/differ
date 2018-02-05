@@ -14,7 +14,7 @@ public class Differ {
 
             XMLReader xmlReader = new XMLReader(firstXmlFile,secondXmlFile);
             Comparer  comparer  = new Comparer(xmlReader);
-            System.out.println("<<<<<<<<<<<<----------------------------------");
+            
 
         } catch (Exception e) {
             e.printStackTrace();

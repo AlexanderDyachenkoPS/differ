@@ -1,10 +1,7 @@
 package ru.billing.diffhelpers;
 
 
-import ru.billing.differs.DiffCommandAlgs;
-import ru.billing.differs.DiffCommands;
-import ru.billing.differs.DiffPredicates;
-import ru.billing.differs.DiffRequests;
+import ru.billing.differs.*;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -12,69 +9,91 @@ import java.util.Set;
 
 public class DiffPrinter {
 
+    private void printSwimlane () {
+        System.out.println("==-------------------------------------------------------------------------------------==");
+    }
+
+    public void printHeaders (Headr ihdr) {
+        System.out.println("Compare collections");
+        printSwimlane();
+        System.out.print(String.format("%-50s",ihdr.getfHeadr().getCOLLECTION_FILENAME()));
+        System.out.println(String.format("%-50s",ihdr.getsHeadr().getCOLLECTION_FILENAME()));
+
+        System.out.print(String.format("%-50s",ihdr.getfHeadr().getCOLLECTION_NAME()));
+        System.out.println(String.format("%-50s",ihdr.getsHeadr().getCOLLECTION_NAME()));
+
+        System.out.print(String.format("%-50s",ihdr.getfHeadr().getCOLLECTION_UID()));
+        System.out.println(String.format("%-50s",ihdr.getsHeadr().getCOLLECTION_UID()));
+
+        System.out.print(String.format("%-50s",ihdr.getfHeadr().getCOLLECTION_VERSION()));
+        System.out.println(String.format("%-50s",ihdr.getsHeadr().getCOLLECTION_VERSION()));
+        printSwimlane();
+    }
+
     public void printReqestsDiff (
                                     DiffRequests dReq
                                  ) {
-        System.out.println("Requests that were deleted : " + dReq.getLeftOuter().size());
-        System.out.println("--------------------");
+
+        System.out.println("Compare Requests");
+        printSwimlane();
         Set set;
         Iterator iterator;
         set = dReq.getLeftOuter().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("- Request : "+ mentry.getKey());
+            System.out.println(mentry.getKey());
         }
-        System.out.println("Requests that were added : " + dReq.getRightOuter().size());
-        System.out.println("---------------------");
         set = dReq.getRightOuter().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("+ Request : "+ mentry.getKey());
+            System.out.println(String.format("%82s", mentry.getKey()));
         }
 
-        System.out.println("Requests that were changed : " + dReq.getfreqDiffs().size());
-        System.out.println("---------------------");
         set = dReq.getfreqDiffs().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("/ Request : "+ mentry.getKey());
+
+            System.out.print(String.format("%-50s",mentry.getKey()));
+            System.out.println(String.format("%-50s",mentry.getKey()));
+
         }
+        printSwimlane();
     }
 
 
     public void printPredicatesDiff (
             DiffPredicates dPrd
     ) {
-        System.out.println("Predicates that were deleted : " + dPrd.getLeftOuter().size());
-        System.out.println("--------------------");
+        System.out.println("Compare Predicates");
+        printSwimlane();
         Set set;
         Iterator iterator;
         set = dPrd.getLeftOuter().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("- Predicate : "+ mentry.getKey());
+            System.out.println( mentry.getKey());
         }
-        System.out.println("Predicates that were added : " + dPrd.getRightOuter().size());
-        System.out.println("---------------------");
+
         set = dPrd.getRightOuter().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("+ Predicate : "+ mentry.getKey());
+            System.out.println(String.format("%82s", mentry.getKey()));
         }
 
-        System.out.println("Predicates that were changed : " + dPrd.getfprdDiffs().size());
-        System.out.println("---------------------");
+
         set = dPrd.getfprdDiffs().entrySet();
         iterator = set.iterator();
         while(iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.println("/ Predicate : "+ mentry.getKey());
+            System.out.print(String.format("%-50s",mentry.getKey()));
+            System.out.println(String.format("%-50s",mentry.getKey()));
         }
+        printSwimlane();
     }
 
     public void printCommandsDiff (

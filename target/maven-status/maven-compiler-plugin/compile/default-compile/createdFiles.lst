@@ -1,6 +1,7 @@
 ru\billing\diffhelpers\GeneralHelpers.class
 ru\billing\readers\HexCommandHistories.class
 ru\billing\hextypes\HexCommandGraphRecord.class
+ru\billing\readers\HexArcs.class
 ru\billing\Comparer.class
 ru\billing\readers\HexArguments.class
 ru\billing\readers\HexCollectionHeader.class
@@ -12,10 +13,12 @@ ru\billing\hextypes\HexArcRelationRecord.class
 ru\billing\hextypes\HexPredicateRecord.class
 ru\billing\hextypes\HexCommandRecord.class
 ru\billing\hextypes\HexArgumentRecord.class
+ru\billing\differs\Headr.class
 ru\billing\hextypes\HexCommanHistoryRecord.class
 ru\billing\readers\HexRequestArguments.class
 ru\billing\hextypes\HexArcRequestRecord.class
 ru\billing\hextypes\HexRequestRecord.class
 ru\billing\XMLReader.class
+ru\billing\diffhelpers\DiffPrinter.class
 ru\billing\differs\DiffRequests.class
 ru\billing\hextypes\HexRequestArgumentRecord.class

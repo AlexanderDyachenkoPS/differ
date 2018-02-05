@@ -30,6 +30,9 @@ public class XMLReader {
     HexCommandHistories firstHexCommandHistories;
     HexCommandHistories secondHexCommandHistories;
 
+    HexArcs firstHexArcs;
+    HexArcs secondHexArcs;
+
     HexArcRelation firstHexArcRelation;
     HexArcRelation secondHexArcRelation;
 
@@ -70,17 +73,17 @@ public class XMLReader {
         this.firstXmlFile = vfirstXmlFile;
         this.secondXmlFile = vsecondXmlFile;
         readFiles();
-        getFirstCommandsByRequestGUID("DA20F5C991D345289C84751488EDF6D6");
-        getFirstCommandsByRequestGUID("F03554B75B8D4B4CB98287E44CBB23C9");
-System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
-        getSecondCommandsByRequestGUID("DA20F5C991D345289C84751488EDF6D6");
-        getSecondCommandsByRequestGUID("F03554B75B8D4B4CB98287E44CBB23C9");
-        System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
-        getFirstCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
-        getSecondCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
+     //   getFirstCommandsByRequestGUID("DA20F5C991D345289C84751488EDF6D6");
+     //   getFirstCommandsByRequestGUID("F03554B75B8D4B4CB98287E44CBB23C9");
+//System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
+    //    getSecondCommandsByRequestGUID("DA20F5C991D345289C84751488EDF6D6");
+    //    getSecondCommandsByRequestGUID("F03554B75B8D4B4CB98287E44CBB23C9");
+    //    System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
+    //    getFirstCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
+    //    getSecondCommandsByPredicateGUID("196C63182CAB632AE053A111630A8E5E");
 
-        System.out.println(getFirstHexCollectionHeader().getCOLLECTION_NAME());
-        System.out.println(getSecondHexCollectionHeader().getCOLLECTION_NAME());
+      //  System.out.println(getFirstHexCollectionHeader().getCOLLECTION_NAME());
+     //   System.out.println(getSecondHexCollectionHeader().getCOLLECTION_NAME());
         /*diffMaps();
         diffPrint();*/
     }
@@ -92,6 +95,9 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         this.firstHexPredicates = new HexPredicates(firstXmlFile);
         this.secondHexPredicates = new HexPredicates(secondXmlFile);
+
+        this.firstHexArcs = new HexArcs(firstXmlFile);
+        this.secondHexArcs = new HexArcs(secondXmlFile);
 
         this.firstHexCommandHistories = new HexCommandHistories(firstXmlFile);
         this.secondHexCommandHistories = new HexCommandHistories(secondXmlFile);
@@ -107,14 +113,16 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
                 this.firstHexArcRelation.getHexArcRelation(),
                 this.firstHexRequests,
                 this.firstHexPredicates,
-                this.firstHexArcRequest
+                this.firstHexArcRequest,
+                this.firstHexArcs
         );
         this.secondHexCommandGraph = new HexCommandGraph(
                 this.secondHexCommandHistories.getHexCommandHistories(),
                 this.secondHexArcRelation.getHexArcRelation(),
                 this.secondHexRequests,
                 this.secondHexPredicates,
-                this.secondHexArcRequest
+                this.secondHexArcRequest,
+                this.secondHexArcs
         );
 
         this.firstHexCommands = new HexCommands(firstXmlFile);
@@ -220,8 +228,8 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
 
 
     public HashMap<String, HexCommanHistoryRecord> getFirstCommandsByRequestGUID(String iGUID) {
-        System.out.println("Request GUID: ===============");
-        System.out.println("Request GUID: " + iGUID);
+       // System.out.println("Request GUID: ===============");
+      //  System.out.println("Request GUID: " + iGUID);
 
         HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
         String HARC_HARC_ID;
@@ -242,7 +250,7 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
                 cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
                 cmds.put(cmdGUID, firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
 
-                System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
+                //System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
             }
         }
         return cmds;
@@ -251,8 +259,8 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
     //
 
     public HashMap<String, HexCommanHistoryRecord> getSecondCommandsByRequestGUID(String iGUID) {
-        System.out.println("Request GUID: ===============");
-        System.out.println("Request GUID: " + iGUID);
+      //  System.out.println("Request GUID: ===============");
+       // System.out.println("Request GUID: " + iGUID);
 
         HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
         String HARC_HARC_ID;
@@ -273,15 +281,15 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
                 cmdGUID = secondHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
                 cmds.put(cmdGUID, secondHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
 
-                System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
+             //   System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
             }
         }
         return cmds;
     }
 
       public HashMap<String,HexCommanHistoryRecord> getFirstCommandsByPredicateGUID (String iGUID) {
-        System.out.println("Predicate GUID: ===============");
-        System.out.println("Predicate GUID: " + iGUID);
+     //   System.out.println("Predicate GUID: ===============");
+      //  System.out.println("Predicate GUID: " + iGUID);
 
     HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
     String HARC_HARC_ID;
@@ -302,7 +310,7 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
             cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
             cmds.put(cmdGUID, firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
 
-            System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
+           // System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
         }
     }
         return cmds;
@@ -310,8 +318,8 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
      }
       public HashMap<String,HexCommanHistoryRecord> getSecondCommandsByPredicateGUID (String iGUID) {
 
-          System.out.println("Predicate GUID: ===============");
-          System.out.println("Predicate GUID: " + iGUID);
+         // System.out.println("Predicate GUID: ===============");
+        //  System.out.println("Predicate GUID: " + iGUID);
 
           HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
           String HARC_HARC_ID;
@@ -332,7 +340,7 @@ System.out.println("=======================>>>>>>>>>>>>>>>>>>>>>>>>>");
                   cmdGUID = secondHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
                   cmds.put(cmdGUID, secondHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
 
-                  System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
+             //     System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
               }
           }
           return cmds;

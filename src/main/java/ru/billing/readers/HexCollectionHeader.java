@@ -49,15 +49,6 @@ public class HexCollectionHeader {
     // пихаем все потроха команд в MAP
     private void buildCollectionHeader ( NodeList iNodeList) {
 
-        String COLLECTION_UID       = "";
-        String COLLECTION_VERSION   = "";
-        String COLLECTION_NAME      = "";
-        String COLLECTION_FILENAME  = "";
-        String HEX_VERSION          = "";
-        String HEX_SCR_VERSION      = "";
-
-
-
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
 
