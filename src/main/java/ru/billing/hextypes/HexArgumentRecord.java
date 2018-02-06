@@ -1,6 +1,6 @@
 package ru.billing.hextypes;
 
-public class HexArgumentRecord {
+public class HexArgumentRecord implements Comparable<HexArgumentRecord>{
 
 
     private String ENTITY_GUID;
@@ -40,6 +40,21 @@ public class HexArgumentRecord {
 
     public String getTRANSFORMER() {
         return TRANSFORMER;
+    }
+
+    @Override
+    public int compareTo(HexArgumentRecord otherHexArgumentRecord) {
+        //compare name
+        try {
+            if (
+                            this.DEFAULT_VALUE.equals(otherHexArgumentRecord.getDEFAULT_VALUE()) &&
+                            this.NAME.equals(otherHexArgumentRecord.getNAME()) &&
+                            this.SDCT_SDCT_ID.equals(otherHexArgumentRecord.getSDCT_SDCT_ID()) &&
+                            this.TRANSFORMER.equals(otherHexArgumentRecord.getTRANSFORMER())
+                    ) {return 0;}
+            else {return -1;}
+        } catch (Exception e) {   System.out.println(this.getENTITY_GUID() + " exception " + e.toString()); return -1;}
+
     }
 }
 

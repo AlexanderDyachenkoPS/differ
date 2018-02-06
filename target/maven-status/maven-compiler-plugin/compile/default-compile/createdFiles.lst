@@ -13,6 +13,7 @@ ru\billing\hextypes\HexArcRelationRecord.class
 ru\billing\hextypes\HexPredicateRecord.class
 ru\billing\hextypes\HexCommandRecord.class
 ru\billing\hextypes\HexArgumentRecord.class
+ru\billing\differs\DiffArguments.class
 ru\billing\differs\Headr.class
 ru\billing\hextypes\HexCommanHistoryRecord.class
 ru\billing\readers\HexRequestArguments.class

@@ -50,11 +50,14 @@ public class HexArguments {
     // пихаем все потроха команд в MAP
     private void buildArgumentsMap (HashMap<String, HexArgumentRecord> iMap, NodeList iNodeList) {
 
-        String ENTITY_GUID   = "";
-        String EQTYPE_GUID   = "";
-        String HRQT_HRQT_ID  = "";
-        String REQUEST       = "";
-        String SDCT_SDCT_ID  = "";
+
+
+         String ENTITY_GUID = "";
+         String NAME = "";
+         String SDCT_SDCT_ID = "";
+         String DEFAULT_VALUE = "";
+         String TRANSFORMER = "";
+
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
 
@@ -65,28 +68,26 @@ public class HexArguments {
                 if (currentElement.getNodeName().equals("ENTITY_GUID"))
                 {ENTITY_GUID = currentElement.getTextContent();}
 
-                if (currentElement.getNodeName().equals("EQTYPE_GUID"))
-                {EQTYPE_GUID = currentElement.getTextContent();}
-
-                if (currentElement.getNodeName().equals("HRQT_HRQT_ID"))
-                {HRQT_HRQT_ID = currentElement.getTextContent();}
-
-                if (currentElement.getNodeName().equals("REQUEST"))
-                {REQUEST = currentElement.getTextContent();}
-
-                if (currentElement.getNodeName().equals("REQUEST_CLOB"))
-                {REQUEST = currentElement.getTextContent();}
+                if (currentElement.getNodeName().equals("NAME"))
+                {NAME = currentElement.getTextContent();}
 
                 if (currentElement.getNodeName().equals("SDCT_SDCT_ID"))
                 {SDCT_SDCT_ID = currentElement.getTextContent();}
 
+                if (currentElement.getNodeName().equals("DEFAULT_VALUE"))
+                {DEFAULT_VALUE = currentElement.getTextContent();}
+
+                if (currentElement.getNodeName().equals("TRANSFORMER"))
+                {TRANSFORMER = currentElement.getTextContent();}
+
+
             }
             iMap.put(ENTITY_GUID,new HexArgumentRecord(
                             ENTITY_GUID,
-                            EQTYPE_GUID,
-                            HRQT_HRQT_ID,
-                            REQUEST,
-                            SDCT_SDCT_ID
+                            NAME,
+                            SDCT_SDCT_ID,
+                            DEFAULT_VALUE,
+                            TRANSFORMER
                     )
             );
         }

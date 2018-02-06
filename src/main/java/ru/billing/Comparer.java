@@ -11,7 +11,7 @@ public class Comparer {
 ///// DIFFS BEGIN
     Headr hdr;
 
-
+    DiffArguments       dArg;
     DiffRequests        dReq;
     DiffPredicates      dPrd;
     DiffCommands        dCom;
@@ -32,6 +32,13 @@ public class Comparer {
         hdr = new Headr (xmlreader.getFirstHexCollectionHeader(),
                          xmlreader.getSecondHexCollectionHeader()
         );
+
+        dArg = new DiffArguments();
+        dArg.findDiffArguments(
+                xmlreader.getFirstHexArguments().getHexArgumentRecordHashMap(),
+                xmlreader.getSecondHexArguments().getHexArgumentRecordHashMap()
+        );
+
 
         dReq = new DiffRequests();
         dReq.findDiffRequests(
@@ -62,11 +69,12 @@ public class Comparer {
 
     private void diffPrint () {
 
-        DiffPrinter dPrint = new DiffPrinter ();
+        DiffPrinter dPrint = new DiffPrinter (xmlreader);
         dPrint.printHeaders(hdr);
         dPrint.printReqestsDiff(dReq);
         dPrint.printPredicatesDiff(dPrd);
-    //    dPrint.printCommandsDiff(dCom);
-    //    dPrint.printCommandAlgorothmsDiff(dAlg);
+        dPrint.printCommandsDiff(dCom);
+        dPrint.printCommandAlgorothmsDiff(dAlg);
+        dPrint.printArgumentsDiff(dArg);
     }
 }

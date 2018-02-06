@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class HexCommanHistoryRecord implements Comparable<HexCommanHistoryRecord> {
     // стартовая точка аглоритма
     private String HARC_HARC_ID;
+
+    private String ENTITY_GUID;
+
     // алгоритм команды
     private DirectedGraph<String, DefaultEdge> cmdAlgorithm;
     //cписок список всех путей в алгоритме команды
@@ -30,6 +33,7 @@ public class HexCommanHistoryRecord implements Comparable<HexCommanHistoryRecord
                            String iHARC_HARC_ID)
     {
         this.HARC_HARC_ID                   = iHARC_HARC_ID;
+        this.ENTITY_GUID                    = iENTITY_GUID;
         cmdRoads = new ArrayList<String>();
     }
     public String  getHARC_HARC_ID ()
@@ -52,7 +56,9 @@ public class HexCommanHistoryRecord implements Comparable<HexCommanHistoryRecord
         return cmdRoads;
     }
 
-
+    public String getENTITY_GUID() {
+        return ENTITY_GUID;
+    }
 
     @Override
     public int compareTo(HexCommanHistoryRecord otherHexCommanHistoryRecord) {
