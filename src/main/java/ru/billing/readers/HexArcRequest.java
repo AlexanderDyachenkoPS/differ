@@ -48,6 +48,8 @@ public class HexArcRequest {
     private void buildArcRequestMap (HashMap<String, HexArcRequestRecord> iMap, NodeList iNodeList) {
 
         String HARC_ID = "";
+        String SUBCOMMAND_GUID = "";
+        String SUB_COLLECTION_GUID = "";
         String REQUEST_GUID = "";
         String REQ_COLLECTION_GUID = "";
         String PREDICATE_GUID = "";
@@ -65,6 +67,12 @@ public class HexArcRequest {
                 if (currentElement.getNodeName().equals("HARC_HARC_ID"))
                 {HARC_ID = currentElement.getTextContent();}
 
+                if (currentElement.getNodeName().equals("SUBCOMMAND_GUID"))
+                {SUBCOMMAND_GUID = currentElement.getTextContent();}
+
+                if (currentElement.getNodeName().equals("SUB_COLLECTION_GUID"))
+                {SUB_COLLECTION_GUID = currentElement.getTextContent();}
+
                 if (currentElement.getNodeName().equals("REQUEST_GUID"))
                 {REQUEST_GUID = currentElement.getTextContent();}
 
@@ -80,6 +88,8 @@ public class HexArcRequest {
             }
             iMap.put(HARC_ID,new HexArcRequestRecord(
                 HARC_ID,
+                            SUBCOMMAND_GUID,
+                            SUB_COLLECTION_GUID,
             REQUEST_GUID,
             REQ_COLLECTION_GUID,
              PREDICATE_GUID,

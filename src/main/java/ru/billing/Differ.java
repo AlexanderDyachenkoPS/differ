@@ -9,12 +9,12 @@ public class Differ {
 
         try {
 
-            File firstXmlFile = new File("C:\\out\\sprint001_24_406.xml");
-            File secondXmlFile = new File("C:\\out\\sprint001_24_415.xml");
+            File firstXmlFile = new File(args[0]);
+            File secondXmlFile = new File(args[1]);
 
             XMLReader xmlReader = new XMLReader(firstXmlFile,secondXmlFile);
             Comparer  comparer  = new Comparer(xmlReader);
-            System.out.println("<<<<<<<<<<<<----------------------------------");
+            
 
         } catch (Exception e) {
             e.printStackTrace();

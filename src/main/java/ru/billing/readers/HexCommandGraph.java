@@ -5,10 +5,7 @@ import org.jgrapht.graph.DefaultEdge;
 import ru.billing.hextypes.*;
 
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class HexCommandGraph {
     private static String cmdPa;
@@ -17,6 +14,10 @@ public class HexCommandGraph {
     private static HexRequests     vHexRequests;
     private static HexPredicates   vHexPredicates;
     private static HexArcRequest   vHexArcRequest;
+    private static HexArcs       vHexArcs;
+
+    private ArrayList<String> cmdWOAlg;
+
 
     private static HashMap<String, HexCommanHistoryRecord> vCmdHist;
     private static HashMap<String, HexArcRelationRecord> vArcRel;
@@ -30,7 +31,8 @@ public class HexCommandGraph {
             HashMap<String, HexArcRelationRecord> iArcRel,
             HexRequests iHexRequests,
             HexPredicates iHexPredicates,
-            HexArcRequest iHexArcRequest
+            HexArcRequest iHexArcRequest,
+            HexArcs iHexArcs
 
 
     )  {
@@ -40,7 +42,8 @@ public class HexCommandGraph {
 
         this.vCmdHist = iCmdHist;
         this.vArcRel  = iArcRel;
-
+        this.vHexArcs  = iHexArcs;
+        this.cmdWOAlg  = new ArrayList<String>();
         fullHexCommandGraph = buildCommandsGraphs ();
        fillCmdAlgs();
 
@@ -100,7 +103,8 @@ public class HexCommandGraph {
                                 if (        // пустая команда без аглоритма - когда понял это, потратил половину словарного запаса
                                         e.getMessage().equals("no such vertex in graph") && Level == 1
                                     ) {
-                                            System.out.println("Command without alg, START HARC_HARC_ID : " + startEdge);
+                                           // System.out.println("Command without alg, START HARC_HARC_ID : " + startEdge);
+                                              cmdWOAlg.add(startEdge);
                                       }
         }
 
@@ -125,6 +129,17 @@ public class HexCommandGraph {
     }
 
     //
+    public static String getStepFlags (String iHARC_HARC_ID)
+    {
+        try{
+            return  vHexArcs.getArcRecordByGUID(iHARC_HARC_ID).getCRITICAL_FLAG()+
+                    vHexArcs.getArcRecordByGUID(iHARC_HARC_ID).getERROR_IGNORE_FLAG()+
+                    vHexArcs.getArcRecordByGUID(iHARC_HARC_ID).getFINAL_FLAG()+
+                    vHexArcs.getArcRecordByGUID(iHARC_HARC_ID).getPRINT_OUT_FLAG()+
+                    vHexArcs.getArcRecordByGUID(iHARC_HARC_ID).getPRINT_OUT_TAG();
+        }catch (Exception e) {return "";}
+    }
+
     public static String getConditionRpedicateGUID (String HARC_HARC_ID)
     {
         try{
@@ -149,7 +164,8 @@ public class HexCommandGraph {
     public static String getString4HARC_HARC_ID (String HARC_HARC_ID) {
         return  "When: "   + getConditionRpedicateGUID(HARC_HARC_ID) +
                 "Run: "    + getRequestGUID(HARC_HARC_ID) +
-                "Check: "  + getResultRpedicateGUID(HARC_HARC_ID) ;
+                "Check: "  + getResultRpedicateGUID(HARC_HARC_ID) +
+                getStepFlags(HARC_HARC_ID);
 
     }
 
@@ -192,8 +208,7 @@ public class HexCommandGraph {
                 //нам нужны вершины, из которых ничего не выходит
                 if (iht.getcmdAlgorithm().outgoingEdgesOf(vertex).isEmpty())  {
                     getCmdPath (iht,vertex,vertex,getString4HARC_HARC_ID(vertex));
-                   // System.out.println (cmdPa);
-                  //  System.out.println (cmdPaGUID);
+
                     iht.addRoad(cmdPaGUID);
 
                 }
@@ -224,5 +239,7 @@ public class HexCommandGraph {
         return this.fullHexCommandGraph;
     }
 
-
+    public ArrayList<String> getCmdWOAlg() {
+        return cmdWOAlg;
+    }
 }
