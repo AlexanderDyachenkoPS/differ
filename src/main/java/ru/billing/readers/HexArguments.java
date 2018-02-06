@@ -60,7 +60,11 @@ public class HexArguments {
 
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             ENTITY_GUID = "";
+             NAME = "";
+             SDCT_SDCT_ID = "";
+             DEFAULT_VALUE = "";
+             TRANSFORMER = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

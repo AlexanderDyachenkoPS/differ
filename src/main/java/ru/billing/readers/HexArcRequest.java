@@ -59,7 +59,13 @@ public class HexArcRequest {
       //  System.out.println(iNodeList.getLength());
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             HARC_ID = "";
+             SUBCOMMAND_GUID = "";
+             SUB_COLLECTION_GUID = "";
+             REQUEST_GUID = "";
+             REQ_COLLECTION_GUID = "";
+             PREDICATE_GUID = "";
+             PRD_COLLECTION_GUID = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

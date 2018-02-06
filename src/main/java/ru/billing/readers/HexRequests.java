@@ -57,7 +57,11 @@ public class HexRequests {
         String SDCT_SDCT_ID  = "";
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             ENTITY_GUID   = "";
+             EQTYPE_GUID   = "";
+             HRQT_HRQT_ID  = "";
+             REQUEST       = "";
+             SDCT_SDCT_ID  = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

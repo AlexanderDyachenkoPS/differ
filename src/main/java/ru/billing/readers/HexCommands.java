@@ -57,7 +57,12 @@ public class HexCommands {
         String INTERNAL_COMMAND = "";
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             ENTITY_GUID = "";
+             NAME = "";
+             CODE = "";
+             SDCT_SDCT_ID = "";
+             PERSISTENT_CONNECTIONS_FLAG = "";
+             INTERNAL_COMMAND = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

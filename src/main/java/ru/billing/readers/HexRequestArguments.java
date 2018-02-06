@@ -56,7 +56,10 @@ public class HexRequestArguments {
         String MANDATORY_FLAG       = "";
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             REQ_ENTITY_GUID   = "";
+             ARGUMENT_NAME   = "";
+             ARG_ENTITY_GUID  = "";
+             MANDATORY_FLAG       = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);
@@ -74,7 +77,7 @@ public class HexRequestArguments {
                 {MANDATORY_FLAG = currentElement.getTextContent();}
 
             }
-            iMap.put(ARG_ENTITY_GUID,new HexRequestArgumentRecord(
+            iMap.put(REQ_ENTITY_GUID + ARGUMENT_NAME,new HexRequestArgumentRecord(
                     REQ_ENTITY_GUID,
                     ARGUMENT_NAME,
                     ARG_ENTITY_GUID,
