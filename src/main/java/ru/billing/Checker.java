@@ -5,8 +5,6 @@ import ru.billing.XMLReader;
 import ru.billing.checkers.CheckUnbindedArguments;
 import ru.billing.checkers.CheckUnusedPredicates;
 import ru.billing.checkers.CheckUnusedRequests;
-import ru.billing.differs.*;
-import ru.billing.diffhelpers.DiffPrinter;
 
 public class Checker {
 

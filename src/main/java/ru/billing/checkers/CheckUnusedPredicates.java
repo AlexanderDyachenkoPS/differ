@@ -2,7 +2,6 @@ package ru.billing.checkers;
 
 import ru.billing.XMLReader;
 import ru.billing.hextypes.HexPredicateRecord;
-import ru.billing.hextypes.HexRequestRecord;
 
 import java.util.Iterator;
 import java.util.Map;

@@ -50,11 +50,11 @@ public class HexRequests {
     // пихаем все потроха команд в MAP
     private void buildRequestsMap (HashMap<String, HexRequestRecord> iMap, NodeList iNodeList) {
 
-        String ENTITY_GUID   = "";
-        String EQTYPE_GUID   = "";
-        String HRQT_HRQT_ID  = "";
-        String REQUEST       = "";
-        String SDCT_SDCT_ID  = "";
+        String ENTITY_GUID;
+        String EQTYPE_GUID;
+        String HRQT_HRQT_ID;
+        String REQUEST;
+        String SDCT_SDCT_ID;
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
              ENTITY_GUID   = "";

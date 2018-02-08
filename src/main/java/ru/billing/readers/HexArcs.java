@@ -4,8 +4,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import ru.billing.hextypes.HexArcRecord;
-import ru.billing.hextypes.HexArcRelationRecord;
-import ru.billing.hextypes.HexCommandGraphRecord;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -61,12 +59,12 @@ public class HexArcs {
     // пихаем все потроха команд в MAP
     private void buildArcsMap (HashMap<String, HexArcRecord> iMap, NodeList iNodeList) {
 
-        String HARC_ID   = "";
-        String CRITICAL_FLAG   = "";
-        String ERROR_IGNORE_FLAG   = "";
-        String FINAL_FLAG   = "";
-        String PRINT_OUT_TAG   = "";
-        String PRINT_OUT_FLAG   = "";
+        String HARC_ID;
+        String CRITICAL_FLAG;
+        String ERROR_IGNORE_FLAG;
+        String FINAL_FLAG;
+        String PRINT_OUT_TAG;
+        String PRINT_OUT_FLAG;
 
 
      //   System.out.println(iNodeList.getLength());

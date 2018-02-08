@@ -47,13 +47,13 @@ public class HexArcRequest {
     // пихаем все потроха команд в MAP
     private void buildArcRequestMap (HashMap<String, HexArcRequestRecord> iMap, NodeList iNodeList) {
 
-        String HARC_ID = "";
-        String SUBCOMMAND_GUID = "";
-        String SUB_COLLECTION_GUID = "";
-        String REQUEST_GUID = "";
-        String REQ_COLLECTION_GUID = "";
-        String PREDICATE_GUID = "";
-        String PRD_COLLECTION_GUID = "";
+        String HARC_ID;
+        String SUBCOMMAND_GUID;
+        String SUB_COLLECTION_GUID;
+        String REQUEST_GUID;
+        String REQ_COLLECTION_GUID;
+        String PREDICATE_GUID;
+        String PRD_COLLECTION_GUID;
 
 
       //  System.out.println(iNodeList.getLength());

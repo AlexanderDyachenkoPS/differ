@@ -1,13 +1,7 @@
 package ru.billing.differs;
 
 
-import ru.billing.hextypes.HexRequestRecord;
 import ru.billing.readers.HexCollectionHeader;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 public class Headr {
 

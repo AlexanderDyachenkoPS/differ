@@ -53,9 +53,9 @@ public class HexArcRelation {
     // пихаем все потроха команд в MAP
     private void buildArcRelationMap (HashMap<String, HexArcRelationRecord> iMap, NodeList iNodeList) {
 
-        String PREDICATE_GUID   = "";
-        String HARC_HARC_ID   = "";
-        String NEXT_HARC_ID   = "";
+        String PREDICATE_GUID;
+        String HARC_HARC_ID;
+        String NEXT_HARC_ID;
 
      //   System.out.println(iNodeList.getLength());
 
