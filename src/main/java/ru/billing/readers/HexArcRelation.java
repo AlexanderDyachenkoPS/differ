@@ -60,7 +60,9 @@ public class HexArcRelation {
      //   System.out.println(iNodeList.getLength());
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             PREDICATE_GUID   = "";
+             HARC_HARC_ID   = "";
+             NEXT_HARC_ID   = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

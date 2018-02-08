@@ -12,6 +12,7 @@ ru\billing\readers\HexCommandGraph.class
 ru\billing\hextypes\HexArcRelationRecord.class
 ru\billing\hextypes\HexPredicateRecord.class
 ru\billing\hextypes\HexCommandRecord.class
+ru\billing\checkers\CheckUnbindedArguments.class
 ru\billing\hextypes\HexArgumentRecord.class
 ru\billing\differs\DiffArguments.class
 ru\billing\differs\Headr.class
@@ -19,7 +20,9 @@ ru\billing\hextypes\HexCommanHistoryRecord.class
 ru\billing\readers\HexRequestArguments.class
 ru\billing\hextypes\HexArcRequestRecord.class
 ru\billing\hextypes\HexRequestRecord.class
+ru\billing\Checker.class
 ru\billing\XMLReader.class
+ru\billing\Differ.class
 ru\billing\diffhelpers\DiffPrinter.class
 ru\billing\differs\DiffRequests.class
 ru\billing\hextypes\HexRequestArgumentRecord.class

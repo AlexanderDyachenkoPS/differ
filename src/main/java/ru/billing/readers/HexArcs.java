@@ -72,7 +72,12 @@ public class HexArcs {
      //   System.out.println(iNodeList.getLength());
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             HARC_ID   = "";
+             CRITICAL_FLAG   = "";
+             ERROR_IGNORE_FLAG   = "";
+             FINAL_FLAG   = "";
+             PRINT_OUT_TAG   = "";
+             PRINT_OUT_FLAG   = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

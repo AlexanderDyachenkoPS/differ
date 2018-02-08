@@ -55,7 +55,8 @@ public class HexCommandHistories {
         String HARC_HARC_ID   = "";
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
-
+             ENTITY_GUID   = "";
+             HARC_HARC_ID   = "";
             NodeList currentItem = iNodeList.item(i).getChildNodes();
             for (int j=0; j < currentItem.getLength(); j++) {
                 Node currentElement =  currentItem.item(j);

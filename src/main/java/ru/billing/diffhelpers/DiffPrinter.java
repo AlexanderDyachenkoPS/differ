@@ -5,6 +5,7 @@ import ru.billing.XMLReader;
 import ru.billing.differs.*;
 import ru.billing.hextypes.*;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -46,7 +47,7 @@ public class DiffPrinter {
     public void printArgumentsDiff (
             DiffArguments dArg
     ) {
-
+        printSwimlane();
         System.out.println(String.format("%50s", "") + "Compare Arguments");
         printSwimlane();
         System.out.println(String.format("%50s", "") + "Added or removed Arguments");
@@ -116,7 +117,20 @@ public class DiffPrinter {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HexRequestRecord hreq = (HexRequestRecord) mentry.getValue();
             System.out.println(String.format("%50s", "") + hreq.getSDCT_SDCT_ID());
-
+            HashMap<String, HexCommanHistoryRecord> cmdByReq = vxmlReader.getSecondCommandsByRequestGUID(hreq.getENTITY_GUID());
+            //вот тут ищем все команды, в алгоритмах которых есть этот запрос -
+            // если запрос изменился, то и команда поменялась, хотя алгоритм по структуре мог остаться тем же
+            if (!(cmdByReq.isEmpty())) {
+                Set set1;
+                Iterator iterator1;
+                set1 = cmdByReq.entrySet();
+                iterator1 = set1.iterator();
+                while(iterator1.hasNext()) {
+                    Map.Entry mentry1 = (Map.Entry) iterator1.next();
+                    HexCommanHistoryRecord hCmdhist = (HexCommanHistoryRecord) mentry1.getValue();
+                    System.out.println(String.format("%60s", "") + "|__ Command: "+ vxmlReader.getSecondHexCommands().getHexCommandHistoryRecordByGUID(hCmdhist.getENTITY_GUID()).getNAME());
+                }
+            }
         }
         printSwimlane();
     }
@@ -157,6 +171,20 @@ public class DiffPrinter {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HexPredicateRecord hprd = (HexPredicateRecord) mentry.getValue();
             System.out.println(String.format("%50s", "") + hprd.getSDCT_SDCT_ID());
+            HashMap<String, HexCommanHistoryRecord> cmdByPrd = vxmlReader.getSecondCommandsByPredicateGUID(hprd.getENTITY_GUID());
+            //вот тут ищем все команды, в алгоритмах которых есть этот предикат -
+            // если предикат изменился, то и команда поменялась, хотя алгоритм по структуре мог остаться тем же
+            if (!(cmdByPrd.isEmpty())) {
+                Set set1;
+                Iterator iterator1;
+                set1 = cmdByPrd.entrySet();
+                iterator1 = set1.iterator();
+                while(iterator1.hasNext()) {
+                    Map.Entry mentry1 = (Map.Entry) iterator1.next();
+                    HexCommanHistoryRecord hCmdhist = (HexCommanHistoryRecord) mentry1.getValue();
+                    System.out.println(String.format("%60s", "") + "|__ Command: "+ vxmlReader.getSecondHexCommands().getHexCommandHistoryRecordByGUID(hCmdhist.getENTITY_GUID()).getNAME());
+                }
+            }
         }
 
     }
@@ -207,7 +235,7 @@ public class DiffPrinter {
 
         Set set;
         Iterator iterator;
-        System.out.println(String.format("%50s", "") + "Changed Command Algorithms");
+        System.out.println(String.format("%50s", "") + "Changed Command Algorithms. Structure Only.");
         printSwimlane();
         set = dCom.getfcomDiffs().entrySet();
         iterator = set.iterator();
