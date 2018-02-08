@@ -2,6 +2,7 @@ C:\projects\differ\src\main\java\ru\billing\readers\HexCommandHistories.java
 C:\projects\differ\src\main\java\ru\billing\differs\DiffPredicates.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexCollectionHeader.java
 C:\projects\differ\src\main\java\ru\billing\differs\DiffRequests.java
+C:\projects\differ\src\main\java\ru\billing\checkers\CheckUnusedRequests.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexArcRelationRecord.java
 C:\projects\differ\src\main\java\ru\billing\diffhelpers\GeneralHelpers.java
 C:\projects\differ\src\main\java\ru\billing\Comparer.java
@@ -12,6 +13,7 @@ C:\projects\differ\src\main\java\ru\billing\readers\HexCommandGraph.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexRequestArgumentRecord.java
 C:\projects\differ\src\main\java\ru\billing\differs\DiffArguments.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexArcRelation.java
+C:\projects\differ\src\main\java\ru\billing\checkers\CheckUnusedPredicates.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexCommands.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexRequestArguments.java
 C:\projects\differ\src\main\java\ru\billing\Differ.java
@@ -20,6 +22,7 @@ C:\projects\differ\src\main\java\ru\billing\differs\DiffCommands.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexPredicateRecord.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexArcRequestRecord.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexCommandRecord.java
+C:\projects\differ\src\main\java\ru\billing\Checker.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexArguments.java
 C:\projects\differ\src\main\java\ru\billing\differs\DiffCommandAlgs.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexCommanHistoryRecord.java
@@ -27,6 +30,7 @@ C:\projects\differ\src\main\java\ru\billing\hextypes\HexArgumentRecord.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexArcRequest.java
 C:\projects\differ\src\main\java\ru\billing\differs\Headr.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexArcs.java
+C:\projects\differ\src\main\java\ru\billing\checkers\CheckUnbindedArguments.java
 C:\projects\differ\src\main\java\ru\billing\readers\HexPredicates.java
 C:\projects\differ\src\main\java\ru\billing\hextypes\HexArcRecord.java
 C:\projects\differ\src\main\java\ru\billing\XMLReader.java

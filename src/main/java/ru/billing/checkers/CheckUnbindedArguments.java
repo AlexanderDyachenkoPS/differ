@@ -15,8 +15,17 @@ public class CheckUnbindedArguments {
 
     XMLReader xmlreader;
 
+
+    private void printSwimlane () {
+        System.out.println("==---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------==");
+    }
+
     public CheckUnbindedArguments(XMLReader xmlreader) {
         this.xmlreader = xmlreader;
+        printSwimlane ();
+        System.out.println("Warning! Potential BUGS! Here are arguments which have a transformer. If these arguments are used in any requests, they MUST be bonded together. ");
+        System.out.println("Please attentively check list of arguments and requests in which these arguments are used but not bonded with corresponding requests");
+        printSwimlane ();
         findUnbindedArguments ();
     }
 
@@ -37,8 +46,8 @@ public class CheckUnbindedArguments {
                     hreq.getREQUEST().contains(iArg) &&
                             (!isArgumentBindedRequest(hreq.getENTITY_GUID(),iArg))
                ) {
-
-                System.out.println(hreq.getSDCT_SDCT_ID());
+                reqs.add(hreq.getSDCT_SDCT_ID());
+               // System.out.println("Request: " + hreq.getSDCT_SDCT_ID());
             }
         }
         return reqs;
@@ -53,10 +62,18 @@ public class CheckUnbindedArguments {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HexArgumentRecord harg = (HexArgumentRecord) mentry.getValue();
             if (!(harg.getTRANSFORMER().isEmpty())) {
-                    System.out.println(harg.getNAME()+"  >> "+harg.getSDCT_SDCT_ID() +" >>"+ harg.getTRANSFORMER());
+                   // System.out.println("Argument: " + harg.getNAME()+"  >> "+harg.getSDCT_SDCT_ID() +" >>"+ harg.getTRANSFORMER());
                     ArrayList<String> reqs = findUnbindRequestsByArgument(harg.getNAME());
+                    if (reqs.size()>0) {
+                        System.out.println("Argument: NAME=" + harg.getNAME()+"  Description="+harg.getSDCT_SDCT_ID() +" Transformer="+ harg.getTRANSFORMER());
+                        String[] reqsArray ;
+                        reqsArray = reqs.toArray(new String[reqs.size()]);
+                        for (int j=0; j<reqsArray.length; j++) System.out.println("     |_>>> Please check if argument is bonded to this request :" + reqsArray[j]);
+                        printSwimlane ();
+                    }
 
             }
+
         }
     }
 

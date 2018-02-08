@@ -3,6 +3,7 @@ package ru.billing;
 
 
 
+import ru.billing.hextypes.HexArcRelationRecord;
 import ru.billing.hextypes.HexArcRequestRecord;
 import ru.billing.hextypes.HexCommanHistoryRecord;
 import ru.billing.hextypes.HexCommandRecord;
@@ -239,7 +240,7 @@ public class XMLReader {
         Set set;
         set = getFirstHexArcRequest().getHexArcRequest().entrySet();
         Iterator iterator = set.iterator();
-        ;
+
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HARC_HARC_ID = mentry.getKey().toString();
@@ -270,7 +271,7 @@ public class XMLReader {
         Set set;
         set = getSecondHexArcRequest().getHexArcRequest().entrySet();
         Iterator iterator = set.iterator();
-        ;
+
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HARC_HARC_ID = mentry.getKey().toString();
@@ -288,61 +289,91 @@ public class XMLReader {
     }
 
       public HashMap<String,HexCommanHistoryRecord> getFirstCommandsByPredicateGUID (String iGUID) {
-     //   System.out.println("Predicate GUID: ===============");
-      //  System.out.println("Predicate GUID: " + iGUID);
-
-    HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
-    String HARC_HARC_ID;
-    String cmdHARC_HARC_ID;
-    String cmdGUID;
-    //смотрим по HEX_ARC_REQUESTS
-    Set set;
-    set = getFirstHexArcRequest().getHexArcRequest().entrySet();
-    Iterator iterator = set.iterator();
-    ;
-        while (iterator.hasNext()) {
-        Map.Entry mentry = (Map.Entry) iterator.next();
-        HARC_HARC_ID = mentry.getKey().toString();
-        HexArcRequestRecord harcRecord = (HexArcRequestRecord) mentry.getValue();
-        if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
-            // получаем реально команду
-            cmdHARC_HARC_ID = firstHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
-            cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
-            cmds.put(cmdGUID, firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
-
-           // System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
-        }
-    }
-        return cmds;
-
-     }
-      public HashMap<String,HexCommanHistoryRecord> getSecondCommandsByPredicateGUID (String iGUID) {
-
-         // System.out.println("Predicate GUID: ===============");
-        //  System.out.println("Predicate GUID: " + iGUID);
 
           HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
           String HARC_HARC_ID;
           String cmdHARC_HARC_ID;
           String cmdGUID;
-          //смотрим по HEX_ARC_REQUESTS
           Set set;
-          set = getSecondHexArcRequest().getHexArcRequest().entrySet();
-          Iterator iterator = set.iterator();
-          ;
-          while (iterator.hasNext()) {
-              Map.Entry mentry = (Map.Entry) iterator.next();
-              HARC_HARC_ID = mentry.getKey().toString();
-              HexArcRequestRecord harcRecord = (HexArcRequestRecord) mentry.getValue();
-              if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
-                  // получаем реально команду
-                  cmdHARC_HARC_ID = secondHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
-                  cmdGUID = secondHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
-                  cmds.put(cmdGUID, secondHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
-
-             //     System.out.println("Command GUID: " + " " + cmdHARC_HARC_ID + " " + cmdGUID);
+          //для предикатов определения успешности запроса смотрим по HEX_ARC_REQUESTS
+          if (firstHexPredicates.getHexPredicateRecordByGUID(iGUID).getHPRC_HPRC_ID().equals("1") ) {
+              set = getFirstHexArcRequest().getHexArcRequest().entrySet();
+              Iterator iterator = set.iterator();
+              while (iterator.hasNext()) {
+                  Map.Entry mentry = (Map.Entry) iterator.next();
+                  HARC_HARC_ID = mentry.getKey().toString();
+                  HexArcRequestRecord harcRecord = (HexArcRequestRecord) mentry.getValue();
+                  if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
+                      // получаем реально команду
+                      cmdHARC_HARC_ID = firstHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
+                      cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
+                      cmds.put(cmdGUID, firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
+                  }
               }
           }
+
+          //для предикатов выбора очереденого шага алгоритма смотрим по HEX_ARC_RELATIONS
+          if (firstHexPredicates.getHexPredicateRecordByGUID(iGUID).getHPRC_HPRC_ID().equals("2") ) {
+              set = getFirstHexArcRelation().getHexArcRelation().entrySet();
+              Iterator iterator = set.iterator();
+              while (iterator.hasNext()) {
+                  Map.Entry mentry = (Map.Entry) iterator.next();
+                  HARC_HARC_ID = mentry.getKey().toString();
+                  HexArcRelationRecord harcRecord = (HexArcRelationRecord) mentry.getValue();
+                  if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
+                      // получаем реально команду
+                      cmdHARC_HARC_ID = firstHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
+                      cmdGUID = firstHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
+                      cmds.put(cmdGUID, firstHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
+                  }
+              }
+          }
+
+          return cmds;
+
+     }
+
+      public HashMap<String,HexCommanHistoryRecord> getSecondCommandsByPredicateGUID (String iGUID) {
+
+          HashMap<String, HexCommanHistoryRecord> cmds = new HashMap<String, HexCommanHistoryRecord>();
+          String HARC_HARC_ID;
+          String cmdHARC_HARC_ID;
+          String cmdGUID;
+          Set set;
+          //для предикатов определения успешности запроса смотрим по HEX_ARC_REQUESTS
+          if (secondHexPredicates.getHexPredicateRecordByGUID(iGUID).getHPRC_HPRC_ID().equals("1") ) {
+              set = getSecondHexArcRequest().getHexArcRequest().entrySet();
+              Iterator iterator = set.iterator();
+              while (iterator.hasNext()) {
+                  Map.Entry mentry = (Map.Entry) iterator.next();
+                  HARC_HARC_ID = mentry.getKey().toString();
+                  HexArcRequestRecord harcRecord = (HexArcRequestRecord) mentry.getValue();
+                  if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
+                      // получаем реально команду
+                      cmdHARC_HARC_ID = secondHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
+                      cmdGUID = secondHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
+                      cmds.put(cmdGUID, secondHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
+                  }
+              }
+          }
+
+          //для предикатов выбора очереденого шага алгоритма смотрим по HEX_ARC_RELATIONS
+          if (secondHexPredicates.getHexPredicateRecordByGUID(iGUID).getHPRC_HPRC_ID().equals("2") ) {
+              set = getSecondHexArcRelation().getHexArcRelation().entrySet();
+              Iterator iterator = set.iterator();
+              while (iterator.hasNext()) {
+                  Map.Entry mentry = (Map.Entry) iterator.next();
+                  HARC_HARC_ID = mentry.getKey().toString();
+                  HexArcRelationRecord harcRecord = (HexArcRelationRecord) mentry.getValue();
+                  if (harcRecord.getPREDICATE_GUID().equals(iGUID)) {
+                      // получаем реально команду
+                      cmdHARC_HARC_ID = secondHexCommandGraph.getCmdRootHarcByHARC_HARC_ID(HARC_HARC_ID);
+                      cmdGUID = secondHexCommandHistories.getHexCommandHistoryRecordByHARC_HARC_ID(cmdHARC_HARC_ID);
+                      cmds.put(cmdGUID, secondHexCommandHistories.getHexCommandHistoryRecordByGUID(cmdGUID));
+                  }
+              }
+          }
+
           return cmds;
     }
 

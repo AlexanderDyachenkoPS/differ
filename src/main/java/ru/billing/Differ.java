@@ -8,14 +8,17 @@ public class Differ {
     public static void main (String[] args)  throws Exception {
 
         try {
-
-            File firstXmlFile = new File(args[0]);
-            File secondXmlFile = new File(args[1]);
+            String options = args[0];
+            File firstXmlFile = new File(args[1]);
+            File secondXmlFile = new File(args[2]);
 
             XMLReader xmlReader = new XMLReader(firstXmlFile,secondXmlFile);
-            Comparer  comparer  = new Comparer(xmlReader);
-            Checker   checker   = new Checker(xmlReader);
-
+            if (options.contains("D")) {
+                Comparer comparer = new Comparer(xmlReader);
+            }
+            if (options.contains("C")) {
+                Checker checker = new Checker(xmlReader);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
