@@ -8,11 +8,8 @@ import ru.billing.hextypes.*;
 import java.util.*;
 
 public class HexCommandGraph {
-    private static String cmdPa;
     private static String cmdHARC;
     private static String cmdPaGUID;
-    private static HexRequests     vHexRequests;
-    private static HexPredicates   vHexPredicates;
     private static HexArcRequest   vHexArcRequest;
     private static HexArcs       vHexArcs;
 
@@ -36,8 +33,8 @@ public class HexCommandGraph {
 
 
     )  {
-        this.vHexRequests   = iHexRequests;
-        this.vHexPredicates = iHexPredicates;
+        HexRequests vHexRequests = iHexRequests;
+        HexPredicates vHexPredicates = iHexPredicates;
         this.vHexArcRequest = iHexArcRequest;
 
         this.vCmdHist = iCmdHist;
@@ -176,8 +173,6 @@ public class HexCommandGraph {
                                    String startVertex,
                                    String icmdPath,
                                    String icmdPathGUID) {
-        String cmdP = icmdPath;
-        String cmdPGUID = icmdPathGUID;
         Set<DefaultEdge> edges = iht.getcmdAlgorithm().incomingEdgesOf(startVertex);
         if (!(edges.isEmpty())) {
             for (DefaultEdge edge : edges) {
@@ -185,13 +180,13 @@ public class HexCommandGraph {
 
                 getCmdPath(iht,
                             v2,
-                        cmdP +"->"+ v2,
-                         cmdPGUID + getString4HARC_HARC_ID(v2));
+                        icmdPath +"->"+ v2,
+                         icmdPathGUID + getString4HARC_HARC_ID(v2));
             }
 
         } else{
-            cmdPa = cmdP;
-            cmdPaGUID = cmdPGUID;
+            String cmdPa = icmdPath;
+            cmdPaGUID = icmdPathGUID;
         }
 
     }

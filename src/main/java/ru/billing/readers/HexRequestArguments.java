@@ -3,7 +3,6 @@ package ru.billing.readers;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import ru.billing.hextypes.HexArgumentRecord;
 import ru.billing.hextypes.HexRequestArgumentRecord;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -50,10 +49,10 @@ public class HexRequestArguments {
 
 
 
-        String REQ_ENTITY_GUID   = "";
-        String ARGUMENT_NAME   = "";
-        String ARG_ENTITY_GUID  = "";
-        String MANDATORY_FLAG       = "";
+        String REQ_ENTITY_GUID;
+        String ARGUMENT_NAME;
+        String ARG_ENTITY_GUID;
+        String MANDATORY_FLAG;
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
              REQ_ENTITY_GUID   = "";

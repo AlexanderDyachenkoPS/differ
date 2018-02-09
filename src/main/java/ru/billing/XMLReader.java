@@ -6,7 +6,6 @@ package ru.billing;
 import ru.billing.hextypes.HexArcRelationRecord;
 import ru.billing.hextypes.HexArcRequestRecord;
 import ru.billing.hextypes.HexCommanHistoryRecord;
-import ru.billing.hextypes.HexCommandRecord;
 import ru.billing.readers.*;
 
 

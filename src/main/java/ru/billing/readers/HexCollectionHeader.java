@@ -3,8 +3,6 @@ package ru.billing.readers;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import ru.billing.hextypes.HexArcRelationRecord;
-import ru.billing.hextypes.HexCommandGraphRecord;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,7 +11,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
-import java.util.HashMap;
 
 public class HexCollectionHeader {
 

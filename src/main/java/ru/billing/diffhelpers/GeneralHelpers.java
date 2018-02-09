@@ -20,13 +20,7 @@ public class GeneralHelpers {
     }
     ///////////////////////////
 
-    private static String padString (Integer symbols) {
-        String s = "|_";
-        for (int i=0; i<symbols; i++) {
-            s = " "+s;
-        }
-        return s;
-    }
+
 
     ///////////////////////////
 
@@ -130,7 +124,7 @@ public class GeneralHelpers {
 
 
                 System.out.print(
-                        padString(vLevel)     +
+                        vLevel     +
                                 " "        +
                                 v1         +
                                 " "
@@ -172,7 +166,7 @@ public class GeneralHelpers {
 
 
                 System.out.print(
-                        padString(vLevel)     +
+                        vLevel     +
                                 " "        +
                                 v1         +
                                 " "

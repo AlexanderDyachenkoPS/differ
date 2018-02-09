@@ -49,12 +49,12 @@ public class HexCommands {
     // пихаем все потроха команд в MAP
     private void buildCommandsMap (HashMap<String, HexCommandRecord> iMap, NodeList iNodeList) {
 
-        String ENTITY_GUID = "";
-        String NAME = "";
-        String CODE = "";
-        String SDCT_SDCT_ID = "";
-        String PERSISTENT_CONNECTIONS_FLAG = "";
-        String INTERNAL_COMMAND = "";
+        String ENTITY_GUID;
+        String NAME;
+        String CODE;
+        String SDCT_SDCT_ID;
+        String PERSISTENT_CONNECTIONS_FLAG;
+        String INTERNAL_COMMAND;
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
              ENTITY_GUID = "";

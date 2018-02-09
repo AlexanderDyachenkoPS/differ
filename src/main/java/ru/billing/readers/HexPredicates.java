@@ -49,12 +49,12 @@ public class HexPredicates {
     // пихаем все потроха команд в MAP
     private void buildPredicatesMap (HashMap<String, HexPredicateRecord> iMap, NodeList iNodeList) {
 
-        String ENTITY_GUID   = "";
-        String HPRC_HPRC_ID   = "";
-        String HPRT_HPRT_ID  = "";
-        String NEGATION     ="";
-        String PREDICATE     = "";
-        String SDCT_SDCT_ID  = "";
+        String ENTITY_GUID;
+        String HPRC_HPRC_ID;
+        String HPRT_HPRT_ID;
+        String NEGATION;
+        String PREDICATE;
+        String SDCT_SDCT_ID;
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
              ENTITY_GUID   = "";

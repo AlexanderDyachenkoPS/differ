@@ -4,7 +4,6 @@ import ru.billing.XMLReader;
 import ru.billing.hextypes.HexArgumentRecord;
 import ru.billing.hextypes.HexRequestRecord;
 
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;

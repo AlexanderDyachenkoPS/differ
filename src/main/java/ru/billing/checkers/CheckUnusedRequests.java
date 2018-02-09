@@ -1,10 +1,8 @@
 package ru.billing.checkers;
 
 import ru.billing.XMLReader;
-import ru.billing.hextypes.HexArgumentRecord;
 import ru.billing.hextypes.HexRequestRecord;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;

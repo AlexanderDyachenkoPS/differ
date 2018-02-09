@@ -4,7 +4,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import ru.billing.hextypes.HexArgumentRecord;
-import ru.billing.hextypes.HexRequestRecord;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -52,11 +51,11 @@ public class HexArguments {
 
 
 
-         String ENTITY_GUID = "";
-         String NAME = "";
-         String SDCT_SDCT_ID = "";
-         String DEFAULT_VALUE = "";
-         String TRANSFORMER = "";
+         String ENTITY_GUID;
+         String NAME;
+         String SDCT_SDCT_ID;
+         String DEFAULT_VALUE;
+         String TRANSFORMER;
 
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {

@@ -51,8 +51,8 @@ public class HexCommandHistories {
     // пихаем все потроха команд в MAP
     private void buildCommandHistoriesMap (HashMap<String, HexCommanHistoryRecord> iMap, NodeList iNodeList) {
 
-        String ENTITY_GUID   = "";
-        String HARC_HARC_ID   = "";
+        String ENTITY_GUID;
+        String HARC_HARC_ID;
 
         for (int i=0 ; i<iNodeList.getLength(); i++) {
              ENTITY_GUID   = "";
