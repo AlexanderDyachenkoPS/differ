@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2567f6f4-bda2-415f-95fd-511313f1aac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/Checker.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/Checker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/XMLReader.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/XMLReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnbindedArguments.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnbindedArguments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnusedPredicates.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnusedPredicates.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnusedRequests.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/checkers/CheckUnusedRequests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/differs/DiffArguments.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/differs/DiffArguments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/differs/DiffCommandAlgs.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/differs/DiffCommandAlgs.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/differs/Headr.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/differs/Headr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/diffhelpers/GeneralHelpers.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/diffhelpers/GeneralHelpers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcRelation.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcRelation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcRequest.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcs.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArcs.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArguments.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexArguments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCollectionHeader.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCollectionHeader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommandGraph.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommandGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommandHistories.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommandHistories.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommands.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexCommands.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexPredicates.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexPredicates.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexRequestArguments.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexRequestArguments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexRequests.class" afterPath="$PROJECT_DIR$/target/classes/ru/billing/readers/HexRequests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/differ-1.0-SNAPSHOT-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/differ-1.0-SNAPSHOT-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/differ-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/differ-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/Checker.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/Checker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/XMLReader.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/XMLReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnbindedArguments.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnbindedArguments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnusedPredicates.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnusedPredicates.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnusedRequests.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/checkers/CheckUnusedRequests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/differs/DiffArguments.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/differs/DiffArguments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/differs/DiffCommandAlgs.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/differs/DiffCommandAlgs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/differs/Headr.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/differs/Headr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/diffhelpers/GeneralHelpers.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/diffhelpers/GeneralHelpers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcRelation.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcRelation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcRequest.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcs.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArcs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArguments.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexArguments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCollectionHeader.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCollectionHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommandGraph.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommandGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommandHistories.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommandHistories.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommands.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexCommands.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexPredicates.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexPredicates.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexRequestArguments.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexRequestArguments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexRequests.java" afterPath="$PROJECT_DIR$/src/main/java/ru/billing/readers/HexRequests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -743,7 +701,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-8" width="1864" height="1096" extended-state="6" />
+    <frame x="64" y="-8" width="1864" height="1096" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -753,9 +711,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.392936" sideWeight="0.32800853" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08820346" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08820346" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44219068" sideWeight="0.90468585" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44219068" sideWeight="0.90468585" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1098,8 +1056,8 @@
         <state relative-caret-position="242">
           <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="false" />
+            <element signature="e#1556#1557#0" expanded="false" />
           </folding>
         </state>
       </provider>
