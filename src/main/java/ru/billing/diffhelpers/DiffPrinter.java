@@ -224,7 +224,20 @@ public class DiffPrinter {
             Map.Entry mentry = (Map.Entry) iterator.next();
             HexCommandRecord hcmd = (HexCommandRecord) mentry.getValue();
             System.out.println(String.format("%50s", "") + hcmd.getNAME());
-
+            HashMap<String, HexCommanHistoryRecord> cmdByReq = vxmlReader.getSecondCommandsByCommandGUID(hcmd.getENTITY_GUID());
+            //вот тут ищем все команды, в алгоритмах которых есть этот запрос -
+            // если запрос изменился, то и команда поменялась, хотя алгоритм по структуре мог остаться тем же
+            if (!(cmdByReq.isEmpty())) {
+                Set set1;
+                Iterator iterator1;
+                set1 = cmdByReq.entrySet();
+                iterator1 = set1.iterator();
+                while(iterator1.hasNext()) {
+                    Map.Entry mentry1 = (Map.Entry) iterator1.next();
+                    HexCommanHistoryRecord hCmdhist = (HexCommanHistoryRecord) mentry1.getValue();
+                    System.out.println(String.format("%60s", "") + "|__ Command: "+ vxmlReader.getSecondHexCommands().getHexCommandHistoryRecordByGUID(hCmdhist.getENTITY_GUID()).getNAME());
+                }
+            }
         }
     }
 
@@ -245,7 +258,20 @@ public class DiffPrinter {
            // vxmlReader.getFirstHexCommands().getHexCommands().get(halg.getENTITY_GUID()).getNAME()
             System.out.println(String.format("%50s", "") + vxmlReader.getFirstHexCommands().getHexCommands().get(halg.getENTITY_GUID()).getNAME()
             );
-
+            HashMap<String, HexCommanHistoryRecord> cmdByReq = vxmlReader.getSecondCommandsByCommandGUID(halg.getENTITY_GUID());
+            //вот тут ищем все команды, в алгоритмах которых есть этот запрос -
+            // если запрос изменился, то и команда поменялась, хотя алгоритм по структуре мог остаться тем же
+            if (!(cmdByReq.isEmpty())) {
+                Set set1;
+                Iterator iterator1;
+                set1 = cmdByReq.entrySet();
+                iterator1 = set1.iterator();
+                while(iterator1.hasNext()) {
+                    Map.Entry mentry1 = (Map.Entry) iterator1.next();
+                    HexCommanHistoryRecord hCmdhist = (HexCommanHistoryRecord) mentry1.getValue();
+                    System.out.println(String.format("%60s", "") + "|__ Command: "+ vxmlReader.getSecondHexCommands().getHexCommandHistoryRecordByGUID(hCmdhist.getENTITY_GUID()).getNAME());
+                }
+            }
         }
     }
 }
